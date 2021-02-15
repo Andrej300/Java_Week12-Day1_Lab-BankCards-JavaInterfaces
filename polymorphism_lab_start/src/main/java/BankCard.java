@@ -1,8 +1,14 @@
-public abstract class BankCard {
+public abstract class BankCard implements IScan{
 
     private String cardNumber;
     private String expiryDate;
     private int securityNumber;
+
+    public BankCard(String cardNumber, String expiryDate, int securityNumber){
+        this.cardNumber = cardNumber;
+        this.expiryDate = expiryDate;
+        this.securityNumber = securityNumber;
+    }
 
     public String getCardNumber() {
         return this.cardNumber;
@@ -15,4 +21,6 @@ public abstract class BankCard {
     public int getSecurityNumber() {
         return this.securityNumber;
     }
+
+    public abstract String scan();
 }
